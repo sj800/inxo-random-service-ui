@@ -1,6 +1,6 @@
 // App.jsx
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -9,9 +9,7 @@ import Menu from './components/Menu';
 import NumberGrid from './components/NumberGrid';
 import About from './components/pages/About';
 import Stats from './components/pages/Stats';
-
 import RandomBall from './components/RandomBall';
-
 
 import { fetchAllCounts } from './services/randomService';
 
@@ -42,48 +40,32 @@ const App = () => {
   }, []);
 
   return (
-    <Router>
-      <div className="relative min-h-screen flex flex-col sm:flex-row bg-[#0A0A0A] text-white font-sans">
-        {/* Collapsible Sidebar */}
-        <Menu />
+    <div className="relative min-h-screen flex flex-col sm:flex-row bg-[#0A0A0A] text-white font-sans">
+      <Menu />
 
-        {/* Main Content */}
-        <main className="flex-1 px-6 py-10">
-          <div className="max-w-7xl mx-auto">
-            <Header />
-                
-            <Routes>
-  <Route
-    path="/"
-    element={
-      <NumberGrid
-        counts={counts}
-        incrementedNumber={incrementedNumber}
-        highestCountNumber={highestCountNumber}
-        loadData={loadData}
-      />
-    }
-  />
-    <Route
-    path="/inxo-random-service-ui"
-    element={
-      <NumberGrid
-        counts={counts}
-        incrementedNumber={incrementedNumber}
-        highestCountNumber={highestCountNumber}
-        loadData={loadData}
-      />
-    }
-  />
-  <Route path="/random-ball" element={<RandomBall />} />
-  <Route path="/stats" element={<Stats />} />
-  <Route path="/about" element={<About />} />
-</Routes>
-            <Footer />
-          </div>
-        </main>
-      </div>
-    </Router>
+      <main className="flex-1 px-6 py-10">
+        <div className="max-w-7xl mx-auto">
+          <Header />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <NumberGrid
+                  counts={counts}
+                  incrementedNumber={incrementedNumber}
+                  highestCountNumber={highestCountNumber}
+                  loadData={loadData}
+                />
+              }
+            />
+            <Route path="/random-ball" element={<RandomBall />} />
+            <Route path="/stats" element={<Stats />} />
+            <Route path="/about" element={<About />} />
+          </Routes>
+          <Footer />
+        </div>
+      </main>
+    </div>
   );
 };
 
