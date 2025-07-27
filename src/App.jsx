@@ -51,6 +51,12 @@ const App = () => {
         <main className="flex-1 px-6 py-10">
           <div className="max-w-7xl mx-auto">
             <Header />
+                  <NumberGrid
+        counts={counts}
+        incrementedNumber={incrementedNumber}
+        highestCountNumber={highestCountNumber}
+        loadData={loadData}
+      />
             <Routes>
   <Route
     path="/"

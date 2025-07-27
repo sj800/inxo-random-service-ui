@@ -6,11 +6,12 @@
   "homepage": "https://sj800.github.io/inxo-random-service-ui",
   "scripts": {
     "dev": "vite",
+    "build": "vite build --mode dev",
     "build:local": "vite build --mode local",
     "build:dev": "vite build --mode dev",
-    "build:prod": "vite build --mode production",
+    "build:prod": "vite build --mode prod",
     "preview": "vite preview",
-    "predeploy": "npm run build:prod",
+    "predeploy": "npm run build -- --mode prod",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
