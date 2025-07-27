@@ -1,27 +1,17 @@
-import { defineConfig } from 'vite'
+import { defineConfig, loadEnv } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-// https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(),tailwindcss()],
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd()) // 👈 load .env files
 
-  animation: {
-  'pop-pulse': 'popPulse 1.8s ease-out forwards',
-},
-keyframes: {
-  popPulse: {
-    '0%': { transform: 'scale(0.8)', opacity: 0 },
-    '30%': { transform: 'scale(1.05)', opacity: 1 },
-    '70%': { transform: 'scale(1)', opacity: 1 },
-    '100%': { transform: 'scale(0.95)', opacity: 0 },
-  },
-}
-
-},
-
-
-
-)
-
-
+  return {
+    base: env.VITE_APP_BASE_URL || '/', // 👈 dynamic base path
+    plugins: [react(), tailwindcss()],
+    css: {
+      preprocessorOptions: {
+        // Optional if you use custom animations here
+      },
+    },
+  }
+})

@@ -1,6 +1,6 @@
 export const fetchAllCounts = async () => {
   try {
-    const res = await fetch('http://localhost:8080/randomize');
+    const res = await fetch('https://inxo-random-service-be.onrender.com/randomize');
     const data = await res.json();
 
     console.log('Fetched data:', data);
