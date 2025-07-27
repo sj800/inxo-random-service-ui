@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd()) // 👈 load .env files
 
   return {
-    base: env.VITE_APP_BASE_URL || '/', // 👈 dynamic base path
+    base: '/inxo-random-service-ui/' , // 👈 dynamic base path
     plugins: [react(), tailwindcss()],
     css: {
       preprocessorOptions: {
