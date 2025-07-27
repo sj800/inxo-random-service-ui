@@ -3,16 +3,15 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://sj800.github.io/inxo-random-service-ui",
+  "homepage": "https://sj800.github.io/random-service-ui",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build --mode dev",
-    "build:local": "vite build --mode local",
-    "build:dev": "vite build --mode dev",
-    "build:prod": "vite build --mode prod",
-    "preview": "vite preview",
-    "predeploy": "npm run build -- --mode prod",
-    "deploy": "gh-pages -d dist"
+  "start": "vite --mode localdev",
+  "dev": "vite --mode dev",
+  "build:dev": "vite build --mode dev",
+  "build:prod": "vite build --mode prod",
+  "preview": "vite preview",
+  "deploy:dev": "npm run build:dev && gh-pages -d dist",
+  "deploy:prod": "npm run build:prod && gh-pages -d dist"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",

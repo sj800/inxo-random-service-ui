@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Menu from './components/Menu';
+import Header from './components/pages/Header';
+import Footer from './components/pages/Footer';
+import Menu from './components/pages/Menu';
 
 import NumberGrid from './components/NumberGrid';
 import About from './components/pages/About';

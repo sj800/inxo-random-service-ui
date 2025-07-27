@@ -1,5 +1,7 @@
 export const fetchAllCounts = async () => {
   try {
+    const baseUrl = import.meta.env.VITE_INXO_RANDOM_SERVICE_BE_URL;
+    console.log('Using base URL:', baseUrl);
     const res = await fetch('https://inxo-random-service-be.onrender.com/randomize');
     const data = await res.json();
 
