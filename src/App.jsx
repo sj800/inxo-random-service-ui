@@ -51,15 +51,21 @@ const App = () => {
         <main className="flex-1 px-6 py-10">
           <div className="max-w-7xl mx-auto">
             <Header />
-                  <NumberGrid
+                
+            <Routes>
+  <Route
+    path="/"
+    element={
+      <NumberGrid
         counts={counts}
         incrementedNumber={incrementedNumber}
         highestCountNumber={highestCountNumber}
         loadData={loadData}
       />
-            <Routes>
-  <Route
-    path="/"
+    }
+  />
+    <Route
+    path="/inxo-random-service-ui"
     element={
       <NumberGrid
         counts={counts}
