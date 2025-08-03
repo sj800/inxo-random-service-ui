@@ -139,8 +139,8 @@ const ChessBoard = () => {
   ));
 
   return (
-    <div className="min-h-screen bg-[#1e1e1e] text-white p-4 flex flex-col items-center justify-center">
-      <div className="w-full max-w-[90vmin] flex flex-col gap-4 justify-center items-center">
+    <div className="flex-1 bg-[#1e1e1e] text-white p-4 flex flex-col items-center justify-center">
+      <div className="w-full max-w-[min(90vmin,700px)] flex flex-col gap-4 items-center">
         <div className="aspect-square w-[80%] shadow-2xl rounded overflow-hidden border-4 border-[#3c3b37] relative">
           {board}
           <AnimatePresence>

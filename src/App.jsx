@@ -12,7 +12,7 @@ import Stats from './components/pages/Stats';
 import RandomBall from './components/RandomBall';
 
 import { fetchAllCounts } from './services/randomService';
-import ChessBoard from './components/chess/ChessBoard';
+import ChessPage from './components/pages/ChessPage';
 
 const App = () => {
   const [counts, setCounts] = useState(Array(100).fill(0));
@@ -40,32 +40,62 @@ const App = () => {
     loadData();
   }, []);
 
-  return (
-    <div className="relative min-h-screen flex flex-col sm:flex-row bg-[#0A0A0A] text-white font-sans">
+ return (
+    <div className="relative min-h-screen flex bg-[#0A0A0A] text-white font-sans">
       <Menu />
 
       <main className="flex-1 px-6 py-10">
-        <div className="max-w-7xl mx-auto">
-          <Header />
-          <Routes>
-            <Route
-              path="/"
-              element={
+        <Routes>
+          {/* Special full-page route for ChessBoard */}
+          
+
+          {/* Default layout routes */}
+          <Route
+            path="/"
+            element={
+              <div className="max-w-7xl mx-auto">
+                <Header />
                 <NumberGrid
                   counts={counts}
                   incrementedNumber={incrementedNumber}
                   highestCountNumber={highestCountNumber}
                   loadData={loadData}
                 />
-              }
-            />
-            <Route path="/random-ball" element={<RandomBall />} />
-            <Route path="/stats" element={<Stats />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/chess-board" element={<ChessBoard />} />
-          </Routes>
-          <Footer />
-        </div>
+                <Footer />
+              </div>
+            }
+          />
+          <Route
+            path="/random-ball"
+            element={
+              <div className="max-w-7xl mx-auto">
+                <Header />
+                <RandomBall />
+                <Footer />
+              </div>
+            }
+          />
+          <Route
+            path="/stats"
+            element={
+              <div className="max-w-7xl mx-auto">
+                <Header />
+                <Stats />
+                <Footer />
+              </div>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <div className="max-w-7xl mx-auto">
+                <Header />
+                <About />
+                <Footer />
+              </div>
+            }
+          />
+        </Routes>
       </main>
     </div>
   );
