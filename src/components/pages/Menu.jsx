@@ -35,6 +35,7 @@ const NavMenu = () => {
           <Link to="/random-ball" className="hover:text-[#00FF85] transition">Random Number Ball</Link>
           <Link to="/stats" className="hover:text-[#00FF85] transition">Statistics</Link>
           <Link to="/about" className="hover:text-[#00FF85] transition">About</Link>
+          <Link to="/chess-board" className="hover:text-[#00FF85] transition">Chess Board</Link>
         </nav>
       </div>
 
