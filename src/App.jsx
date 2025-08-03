@@ -12,7 +12,6 @@ import Stats from './components/pages/Stats';
 import RandomBall from './components/RandomBall';
 
 import { fetchAllCounts } from './services/randomService';
-import ChessPage from './components/pages/ChessPage';
 
 const App = () => {
   const [counts, setCounts] = useState(Array(100).fill(0));
@@ -46,10 +45,6 @@ const App = () => {
 
       <main className="flex-1 px-6 py-10">
         <Routes>
-          {/* Special full-page route for ChessBoard */}
-          
-
-          {/* Default layout routes */}
           <Route
             path="/"
             element={
